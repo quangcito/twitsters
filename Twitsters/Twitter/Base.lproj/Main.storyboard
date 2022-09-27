@@ -56,6 +56,11 @@
                                         <constraint firstItem="V1x-NG-UbY" firstAttribute="top" secondItem="pnK-Cj-4x2" secondAttribute="topMargin" id="uDr-MY-zKG"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="profileImageView" destination="LHU-nG-cGl" id="TdY-Fg-iNE"/>
+                                    <outlet property="tweetContent" destination="sQu-xe-W1u" id="kgD-6E-lvI"/>
+                                    <outlet property="userNameLabel" destination="V1x-NG-UbY" id="0YZ-UI-8s3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
