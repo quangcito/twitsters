@@ -16,19 +16,18 @@ class TweetCellTableViewCell: UITableViewCell {
     @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var retweetButton: UIButton!
     var favorited: Bool = false
-    var tweetID: Int = -1
-    
+    var tweetId: Int = -1
     
     @IBAction func favoriteTweet(_ sender: Any) {
         let toBeFavorited = !favorited
         if (toBeFavorited) {
-            TwitterAPICaller.client?.favoriteTweet(tweetID: tweetID, success: {
+            TwitterAPICaller.client?.favoriteTweet(tweetId: tweetId, success: {
                 self.setFavorite(true)
             }, failure: { (error) in
                 print("Favorite did not success: \(error)")
             })
         } else {
-            TwitterAPICaller.client?.unfavoriteTweet(tweetID: tweetID, success: {
+            TwitterAPICaller.client?.unfavoriteTweet(tweetId: tweetId, success: {
                 self.setFavorite(false)
             }, failure: { (error) in
                 print("Unfavorite did not success: \(error)")
@@ -37,7 +36,7 @@ class TweetCellTableViewCell: UITableViewCell {
     }
     
     @IBAction func retweet(_ sender: Any) {
-        TwitterAPICaller.client?.retweet(tweetID: tweetID, success: {
+        TwitterAPICaller.client?.retweet(tweetId: tweetId, success: {
             self.setRetweeted(true)
         }, failure: { (error) in
             print("Error in retweeting \(error)")
